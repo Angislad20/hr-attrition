@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport d'Analyse RH & Modélisation de l'Attrition</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 15mm 20mm 15mm;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.5;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-size: 11pt;
+        }
+        .header {
+            border-bottom: 3px solid #2b5c8f;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+        .title {
+            color: #1a365d;
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 0 0 6px 0;
+        }
+        .subtitle {
+            color: #4a5568;
+            font-size: 13pt;
+            margin: 0;
+            font-weight: 500;
+        }
+        .meta-bar {
+            margin-top: 10px;
+            font-size: 9pt;
+            color: #718096;
+            display: flex;
+            justify-content: space-between;
+        }
+        h2 {
+            color: #2b5c8f;
+            font-size: 15pt;
+            border-bottom: 1.5px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        h3 {
+            color: #2d3748;
+            font-size: 12pt;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        .kpi-container {
+            display: table;
+            width: 100%;
+            margin: 15px 0 20px 0;
+        }
+        .kpi-card {
+            display: table-cell;
+            width: 25%;
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid #2b5c8f;
+            padding: 12px 10px;
+            text-align: center;
+        }
+        .kpi-card.danger {
+            border-top-color: #d9534f;
+        }
+        .kpi-card.success {
+            border-top-color: #2ca02c;
+        }
+        .kpi-card.warning {
+            border-top-color: #f0ad4e;
+        }
+        .kpi-val {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+        .kpi-lbl {
+            font-size: 8.5pt;
+            color: #718096;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .figure-box {
+            text-align: center;
+            margin: 18px 0;
+            page-break-inside: avoid;
+        }
+        .figure-box img {
+            max-width: 95%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #edf2f7;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .caption {
+            font-size: 8.5pt;
+            color: #718096;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 9.5pt;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .callout {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 10px 14px;
+            margin: 15px 0;
+            font-size: 10pt;
+            border-radius: 0 4px 4px 0;
+        }
+        .callout.danger {
+            background-color: #fff5f5;
+            border-left-color: #e53e3e;
+        }
+        .callout.success {
+            background-color: #f0fff4;
+            border-left-color: #38a169;
+        }
+        .callout-title {
+            font-weight: bold;
+            color: #2b6cb0;
+            margin-bottom: 4px;
+        }
+        .callout.danger .callout-title {
+            color: #c53030;
+        }
+        .callout.success .callout-title {
+            color: #2f855a;
+        }
+        ul {
+            margin-top: 5px;
+            margin-bottom: 12px;
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENTETE DU RAPPORT -->
+    <div class="header">
+        <div class="title">Rapport Exécutif : Analyse & Prédiction de l'Attrition RH</div>
+        <div class="subtitle">Diagnostic du Turnover, Modélisation Prédictive & Plan d'Action pour la Rétention des Talents</div>
+        <div class="meta-bar">
+            <span><strong>Auteur :</strong> Département Data Science & HR Analytics</span>
+            <span><strong>Source :</strong> IBM HR Analytics (1 470 collaborateurs)</span>
+            <span><strong>Date :</strong> Septembre / Octobre 2026</span>
+        </div>
+    </div>
+
+    <!-- 1. SYNTHESE EXECUTIVE -->
+    <h2>1. Synthèse Exécutive</h2>
+    <p>
+        Dans un contexte où le départ non planifié d'un collaborateur engendre des coûts directs de recrutement, d'intégration et une déperdition critique de savoir-faire, ce projet a pour mission de transformer la gestion de l'attrition d'une posture <strong>réactive</strong> à une démarche <strong>proactive et ciblée</strong>.
+    </p>
+
+    <div class="kpi-container">
+        <div class="kpi-card danger">
+            <div class="kpi-val">16.1%</div>
+            <div class="kpi-lbl">Taux d'Attrition Global</div>
+        </div>
+        <div class="kpi-card warning">
+            <div class="kpi-val">30.5%</div>
+            <div class="kpi-lbl">Attrition avec Heures Sup</div>
+        </div>
+        <div class="kpi-card success">
+            <div class="kpi-val">68.1%</div>
+            <div class="kpi-lbl">Recall du Modèle (Détection)</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-val">0.82</div>
+            <div class="kpi-lbl">Score ROC-AUC</div>
+        </div>
+    </div>
+
+    <div class="callout danger">
+        <div class="callout-title">⚠️ Constat Majeur : L'Overtime et la Déconnexion Managériale comme Déclencheurs</div>
+        Les heures supplémentaires régulières multiplient par 3 le risque de démission (30.5% vs 10.4%). Parallèlement, l'absence prolongée de promotion et un turnover fréquent de managers constituent les signaux d'alerte les plus fiables d'une démission imminente.
+    </div>
+
+    <!-- 2. DIAGNOSTIC EXPLORATOIRE (EDA) -->
+    <h2>2. Diagnostic Analytique & Enseignements de l'EDA</h2>
+    <p>
+        L'analyse exploratoire exhaustive menée sur les 1 470 observations confirme que l'attrition n'est pas uniforme mais se concentre sur des segments d'activité et des situations professionnelles bien identifiés.
+    </p>
+
+    <div class="figure-box">
+        <img src="figures/attrition_overview.png" alt="Vue d'ensemble de l'attrition">
+        <div class="caption">Figure 1 : Répartition globale de l'attrition sur la population étudiée (1 470 collaborateurs).</div>
+    </div>
+
+    <p>
+        Le déséquilibre de classe (environ 1 départ pour 5 salariés stables) impose de rejeter l'exactitude globale (<em>Accuracy</em>) qui serait trompeuse, et de prioriser la sensibilité (<em>Recall</em>) afin de ne pas laisser échapper les collaborateurs sur le départ.
+    </p>
+
+    <div class="page-break"></div>
+
+    <h3>Disparités par Métier (Job Role)</h3>
+    <p>
+        Le taux d'attrition varie considérablement selon la fonction occupée. Les fonctions commerciales de terrain (<em>Sales Representatives</em>) connaissent un taux d'attrition critique de <strong>39.8%</strong>, suivies par les techniciens de laboratoire (<strong>23.9%</strong>). À l'opposé, les fonctions de direction (<em>Research Directors</em> et <em>Managers</em>) présentent une fidélité exemplaire avec moins de 5% de départs.
+    </p>
+
+    <div class="figure-box">
+        <img src="figures/attrition_by_role.png" alt="Attrition par métier">
+        <div class="caption">Figure 2 : Taux d'attrition par poste en comparaison avec la moyenne de l'entreprise (16.1%).</div>
+    </div>
+
+    <h2>3. Facteurs de Risque & Surcharge de Travail</h2>
+    <p>
+        L'analyse bivariée confirme le rôle déstabilisateur des contraintes professionnelles cumulées. Le facteur le plus discriminant de tout le jeu de données réside dans l'accomplissement d'heures supplémentaires régulières (<em>OverTime</em>).
+    </p>
+
+    <div class="figure-box">
+        <img src="figures/attrition_by_overtime.png" alt="Attrition par Heures Sup">
+        <div class="caption">Figure 3 : Impact direct des heures supplémentaires régulières sur le taux et le volume de départs.</div>
+    </div>
+
+    <div class="callout">
+        <div class="callout-title">🔍 Nuance sur la Rémunération et la Distance</div>
+        Le salaire médian des démissionnaires s'établit à <strong>3 202 $</strong> contre <strong>5 204 $</strong> chez les collaborateurs restants (décrochage de près de 2 000 $). De surcroît, les collaborateurs qui partent habitent en moyenne 20% plus loin de leur lieu de travail (10.6 km vs 8.9 km).
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- 4. MODELISATION PREDICTIVE -->
+    <h2>4. Modélisation Prédictive & Performance</h2>
+    <p>
+        Conformément aux exigences de rigueur méthodologique, un pipeline sans fuite de données (<em>anti-Data Leakage</em>) a été mis en œuvre. Après comparaison sous validation croisée stratifiée à 5 blocs de plusieurs algorithmes (Random Forest, Boosting, Régression Logistique), le modèle champion retenu est une <strong>Régression Logistique Régularisée (C=0.1) avec pondération de classe (class_weight='balanced')</strong>.
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Métrique</th>
+                <th>Score Obtenu (Test Set)</th>
+                <th>Objectif & Interprétation RH</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Recall (Rappel)</strong></td>
+                <td><strong>68.1%</strong></td>
+                <td><strong>32 départs détectés sur 47</strong> (le taux de détection a doublé par rapport au modèle standard).</td>
+            </tr>
+            <tr>
+                <td><strong>ROC-AUC</strong></td>
+                <td><strong>0.815</strong></td>
+                <td>Excellente capacité de discrimination globale des probabilités de départ.</td>
+            </tr>
+            <tr>
+                <td><strong>Précision</strong></td>
+                <td><strong>38.6%</strong></td>
+                <td>4 alertes sur 10 correspondent à un départ réel avéré (taux opérationnel acceptable).</td>
+            </tr>
+            <tr>
+                <td><strong>F1-Score</strong></td>
+                <td><strong>0.492</strong></td>
+                <td>Compromis optimisé pour la détection proactive sans saturer les équipes RH.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="figure-box">
+        <img src="figures/model_performance.png" alt="Performance et importance des variables">
+        <div class="caption">Figure 4 : Matrice de confusion sur le jeu de test indépendant (294 collaborateurs) et coefficients d'influence du modèle optimisé.</div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- 5. RECOMMANDATIONS STRATEGIQUES -->
+    <h2>5. Recommandations Stratégiques pour la Direction RH</h2>
+    <p>
+        L'analyse des coefficients standardisés du modèle permet d'orienter les décisions managériales autour de 4 axes prioritaires :
+    </p>
+
+    <ul>
+        <li><strong>Axe 1 - Régulation stricte des heures supplémentaires (Coefficient +1.21) :</strong> Instaurer un tableau de bord d'alerte RH dès qu'un collaborateur cumule plus de deux trimestres consécutifs d'heures sup.</li>
+        <li><strong>Axe 2 - Mesures d'accompagnement pour les collaborateurs mobiles (+0.79) :</strong> Offrir une souplesse de télétravail et des journées de récupération compensatoire aux collaborateurs soumis à des déplacements réguliers.</li>
+        <li><strong>Axe 3 - Pérennisation de la relation managériale (-0.45) :</strong> Notre ratio <em>YearsWithCurrManager_Ratio</em> confirme qu'un binôme manager/collaborateur stable protège significativement du départ. Éviter les restructurations intempestives d'équipes.</li>
+        <li><strong>Axe 4 - Revalorisation des débuts de carrière :</strong> Les postes d'entrée (Niveau 1, <em>Sales Rep</em> et <em>Lab Tech</em>) concentrent l'essentiel des départs. Un plan d'évolution salariale et un octroi de stock-options dès 18 mois d'ancienneté constituent des leviers d'ancrage éprouvés.</li>
+    </ul>
+
+    <!-- 6. LIMITES DU PROJET -->
+    <h2>6. Limites Méthodologiques & Démarche Éthique</h2>
+    <div class="callout">
+        <div class="callout-title">⚖️ Fairness et Traitement des Données Sensibles</div>
+        La variable <code>Gender</code> a été délibérément exclue du modèle prédictif pour des motifs de <em>fairness</em> et d'éthique algorithmique, le taux de démission étant par ailleurs très proche entre hommes (17%) et femmes (15%). Les prédictions doivent toujours être utilisées comme outil d'aide à la décision bienveillante et jamais à des fins disciplinaires.
+    </div>
+
+    <ul>
+        <li><strong>Photographie statique vs Analyse de survie :</strong> Le dataset ne suit pas les employés dans le temps mois par mois. Une analyse de survie (modèle de Cox) permettrait d'estimer précisément l'échéance temporelle du départ.</li>
+        <li><strong>Gestion des Faux Positifs :** Avec 38.6% de précision, le modèle génère des alertes préventives. Les interventions RH déclenchées doivent obligatoirement prendre la forme d'entretiens de parcours d'écoute active et de soutien.</li>
+    </ul>
+
+</body>
+</html>
