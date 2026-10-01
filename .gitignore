@@ -1,0 +1,35 @@
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
+
+# Bytecode et caches Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Jupyter Notebooks & Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Fichiers de sauvegarde et temporaires
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+
+# Configurations IDE et éditeurs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
