@@ -117,13 +117,13 @@ L'analyse des coefficients du modèle final met en évidence les leviers d'actio
 
 ```mermaid
 flowchart TD
-    subgraph Facteurs de Risque (À surveiller)
+    subgraph SG1 ["Facteurs de Risque (À surveiller)"]
         R1["Heures supplémentaires (+1.21)"]
         R2["Déplacements fréquents (+0.79)"]
         R3["Techniciens de laboratoire (+0.59)"]
         R4["Célibataires & Mobilité (+0.50)"]
     end
-    subgraph Facteurs Protecteurs (À développer)
+    subgraph SG2 ["Facteurs Protecteurs (À développer)"]
         P1["Cadre de travail agréable (-0.59)"]
         P2["Satisfaction au poste (-0.53)"]
         P3["Niveau de rémunération (-0.48)"]
